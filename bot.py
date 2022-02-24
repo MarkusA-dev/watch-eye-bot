@@ -1,8 +1,9 @@
 import discord
 import os
 from discord.ext import commands
+import jsonhandler
 
-bot = commands.Bot(command_prefix='? ')
+bot = commands.Bot(command_prefix='?')
 
 @bot.event
 async def on_ready():
@@ -10,8 +11,8 @@ async def on_ready():
     
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send("hey")
+async def datastruct(ctx):
+    await ctx.send(jsonhandler.data)
 
 @bot.command()
 async def load(ctx, extension):
